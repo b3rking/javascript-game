@@ -18,13 +18,18 @@ const App = Vue.createApp({
             score: [],
             currentScore: 0,
             activePlayer: 0,
-            gamePlaying: true
+            gamePlaying: true,
+            dice: 1,
+            diceSrc: ""
         }
     },
     methods: {
         rollDice() {
             // get random number between 1 - 6
-            this.currentScore += Math.floor(Math.random() * 6) + 1;
+            let ran = Math.floor(Math.random() * 6) + 1;
+            this.dice = ran;
+            this.currentScore += ran;
+            this.diceSrc = "dice-"+this.dice+".png";
         },
         hold() {
             this.score[this.activePlayer] += parseInt(this.currentScore);
