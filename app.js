@@ -15,15 +15,19 @@ GAME RULES:
 const App = Vue.createApp({
     data() {
         return {
-            score1: 0,
-            score2: 0,
-            currentScore1: 0,
-            currentScore2: 0 
+            score: [],
+            currentScore: 0,
+            activePlayer: 0,
+            gamePlaying: true
         }
     },
     methods: {
-        sayHello() {
-            alert("hello everyone!");
+        rollDice() {
+            // get random number between 1 - 6
+            this.currentScore += Math.floor(Math.random() * 6) + 1;
+        },
+        hold() {
+            this.score[this.activePlayer] += parseInt(this.currentScore);
         }
     }
 });
