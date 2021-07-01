@@ -12,8 +12,22 @@ GAME RULES:
 
 //// vue.js
 
-const App = 
-const App = 
+const App = Vue.createApp({
+    data() {
+        return {
+            score1: 0,
+            score2: 0,
+            currentScore1: 0,
+            currentScore2: 0 
+        }
+    },
+    methods: {
+        sayHello() {
+            alert("hello everyone!");
+        }
+    }
+});
+App.mount('#game');
 
 
 
